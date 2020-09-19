@@ -19,3 +19,31 @@ testWebP(function (support) {
         document.querySelector('body').classList.add('no-webp');
     }
 });
+
+const link = document.querySelectorAll('a')
+
+link.forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+    })
+});
+
+const triggLeft = document.querySelector('.stats__left')
+const changeFill = document.querySelector('.stats__svg_l')
+
+triggLeft.onmouseenter = () => {
+    changeFill.style.fill = "white";
+};
+triggLeft.onmouseleave = () => {
+    changeFill.style.fill = "#5e80ff";
+};
+
+const triggRight = document.querySelector('.stats__right')
+const changeStroke = document.querySelector('.stats__svg_r')
+
+triggRight.onmouseenter = () => {
+    changeStroke.style.stroke = "white";
+};
+triggRight.onmouseleave = () => {
+    changeStroke.style.stroke = "#5e80ff";
+};
