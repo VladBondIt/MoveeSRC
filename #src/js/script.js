@@ -1,5 +1,6 @@
 // Это не ошибка все ОК
 @@include('alert.js')
+@@include('slick.min.js')
 
 // Функция проверки возможности отображения WEBP
 function testWebP(callback) {
@@ -55,16 +56,38 @@ $(document).ready(function () {
         // Именно на нажамот загаловке .block__title добавляем переключатель-блок active
         // с помощью next мы добавляем анимацию слайда переключателся slideToggle со скоростью 300 мили секунд;
         $(this).toggleClass('active').next().toggleClass('active');
-        // if ($()) {
+        // Если блок .block имеет блок-класс one тогда происходит функция ↓↓
+        // Может открыться только 1 спойлер
+        if ($('.help__spoilers').hasClass('one')) {
+            // У все блоков .block__title кроме нажатого not(this) убираем класс active;
+            $('.help__title').not($(this)).removeClass('active').next().removeClass('active');
+        }
+    });
+});
 
-        // }
-        // // Если блок .block имеет блок-класс one тогда происходит функция ↓↓
-        // if ($('.block').hasClass('one')) {
-        //     // У все блоков .block__title кроме нажатого not(this) убираем класс active;
-        //     $('.block__title').not($(this)).removeClass('active');
-        //     // Скрываем все блоки с текстом .block__text при нажатии на следующий(not(this)(next)) .block__text
-        //     // предыдущий сворачивается вверх со скоросью 300мс slideUp(300);
-        //     $('.block__text').not($(this).next()).slideUp(300);
-        // }
+// Slider
+
+$(document).ready(function () {
+    $('.quotes__slider').slick({
+        speed: 800,
+        touchThreshold: 20,
+        slidesToShow: 1,
+        dots: true,
+    });
+});
+
+$(document).ready(function () {
+    $('.resourses__slider').slick({
+        speed: 800,
+        touchThreshold: 20,
+        slidesToShow: 1,
+        dots: true,
+    });
+});
+
+$(document).ready(function () {
+    $('.header__burger').click(function (event) {
+        $('.header__burger,.header__menu').toggleClass('active');
+        $('body').toggleClass('lock');
     });
 });
