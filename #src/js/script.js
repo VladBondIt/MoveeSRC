@@ -1,5 +1,5 @@
 // Это не ошибка все ОК
-@@include('alert.js')
+@@include('map.js')
 @@include('slick.min.js')
 
 // Функция проверки возможности отображения WEBP
@@ -20,7 +20,7 @@ testWebP(function (support) {
         document.querySelector('body').classList.add('no-webp');
     }
 });
-
+// Links
 const link = document.querySelectorAll('a')
 
 link.forEach(item => {
@@ -28,7 +28,7 @@ link.forEach(item => {
         e.preventDefault();
     })
 });
-
+// Hovers
 const triggLeft = document.querySelector('.stats__left')
 const changeFill = document.querySelector('.stats__svg_l')
 
@@ -48,7 +48,7 @@ triggRight.onmouseenter = () => {
 triggRight.onmouseleave = () => {
     changeStroke.style.stroke = "#5e80ff";
 };
-
+// Spoilers
 $(document).ready(function () {
     // При КЛИКЕ на блок .block__title происходит функция ↓↓
     $('.help__title').click(function (event) {
@@ -67,24 +67,7 @@ $(document).ready(function () {
 
 // Slider
 
-$(document).ready(function () {
-    $('.quotes__slider').slick({
-        speed: 800,
-        touchThreshold: 20,
-        slidesToShow: 1,
-        dots: true,
-    });
-});
-
-$(document).ready(function () {
-    $('.resourses__slider').slick({
-        speed: 800,
-        touchThreshold: 20,
-        slidesToShow: 1,
-        dots: true,
-    });
-});
-
+// Burger
 $(document).ready(function () {
     $('.header__burger').click(function (event) {
         $('.header__burger,.header__menu').toggleClass('active');
