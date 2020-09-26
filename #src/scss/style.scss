@@ -14,7 +14,7 @@
 
 body {
     font-family: Montserrat;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     &.lock {
         @media (max-width: 1023px) {
             overflow: hidden;
@@ -134,6 +134,7 @@ body {
             margin-right: 3%;
             svg {
                 margin-right: 10px;
+                stroke: #f2f2f25b;
             }
         }
         & li:last-child {
@@ -189,4 +190,433 @@ body {
 .container {
     max-width: 1312px;
     margin: 0 auto;
+}
+
+// !!!MAIN BODY!!!
+.main {
+}
+.description {
+    margin-bottom: 4%;
+    &__title {
+        margin-bottom: 5%;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        @media (max-width: 523px) {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        flex-basis: 50%;
+        display: flex;
+        margin-bottom: 4%;
+    }
+
+    &__number {
+        flex: 0 0 66px;
+        font-weight: 300;
+        font-size: 50px;
+        line-height: 61px;
+        color: #333333;
+        text-shadow: 2px 0 0 #fed100;
+        text-align: right;
+    }
+
+    &__label {
+        padding-right: 1%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 4%;
+    }
+
+    &__sublabel {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        color: #333333;
+        margin-bottom: 2%;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 21px;
+        color: #333333;
+    }
+}
+.small-title {
+    & h2 {
+        text-align: center;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 37px;
+        color: #333333;
+    }
+}
+.price {
+    margin-bottom: 5%;
+    &__title {
+        margin-bottom: 3%;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+
+    &__column {
+        flex: 0 1 30%;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        background: #ffffff;
+        border: 1px solid #ebebeb;
+        box-sizing: border-box;
+        text-align: center;
+        align-items: center;
+        &:hover {
+            border: 1px solid #fed100;
+        }
+    }
+
+    &__c-title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: #333333;
+        padding: 10% 1%;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 21px;
+        color: #333333;
+        & p {
+            margin-bottom: 10%;
+        }
+        margin-bottom: 5%;
+    }
+
+    &__number {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 37px;
+        color: #333333;
+        margin-bottom: 10%;
+    }
+
+    &__btn {
+        width: 250px;
+        height: 51.34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fed100;
+        margin-bottom: 10%;
+        & a {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #333333;
+        }
+    }
+}
+.title {
+    text-align: center;
+    &__header {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 37px;
+        color: #333333;
+        margin-bottom: 1%;
+    }
+
+    &__subheader {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: #333333;
+    }
+}
+.carpark {
+    margin-bottom: 5%;
+    &__title {
+        margin-bottom: 5%;
+    }
+
+    &__slider {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__label {
+        flex: 0 1 25%;
+    }
+
+    &__sublabel {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: #333333;
+        margin-bottom: 8%;
+    }
+
+    &__list {
+        font-size: 16px;
+        line-height: 21px;
+        color: #333333;
+        & li {
+            margin-bottom: 8%;
+            position: relative;
+            padding-left: 20px;
+            &::before {
+                content: "";
+                position: absolute;
+                background: url(../img/carpark_check.png) center / cover no-repeat;
+                width: 14px;
+                height: 14px;
+                left: 0;
+                top: 3px;
+            }
+        }
+    }
+
+    &__btn {
+        width: 250px;
+        height: 50px;
+        background: #fed100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & a {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #333333;
+        }
+    }
+
+    &__img {
+        flex: 0 1 75%;
+        & img,
+        source {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.reviews {
+    background: #fed100;
+    padding: 5% 0;
+    margin-bottom: 5%;
+    &__title {
+        margin-bottom: 5%;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__column {
+        flex: 0 1 30%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__name {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        color: #333333;
+        margin-bottom: 5%;
+    }
+
+    &__rating {
+        display: flex;
+        margin-bottom: 5%;
+    }
+
+    &__date {
+        font-size: 16px;
+        line-height: 21px;
+        color: #333333;
+        margin-right: 10px;
+    }
+
+    &__stars {
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 21px;
+        color: #333333;
+        margin-bottom: 5%;
+    }
+
+    &__spoiler {
+        font-size: 16px;
+        line-height: 21px;
+        color: #333333;
+        text-decoration: underline;
+        margin-bottom: 10%;
+        cursor: pointer;
+    }
+
+    &__btn {
+        width: 250px;
+        height: 50px;
+        border: 1px solid #333333;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & a {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #333333;
+        }
+    }
+}
+.contact {
+    margin-bottom: 5%;
+    &__body {
+        max-width: 1002px;
+        margin: 0 auto;
+    }
+    &__header {
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 37px;
+        color: #333333;
+        margin-bottom: 2%;
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        line-height: 21px;
+        color: #333333;
+        margin-bottom: 3%;
+    }
+
+    &__form {
+        display: flex;
+        & input {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            border-bottom: 1px solid #333333;
+            color: rgba(51, 51, 51, 0.7);
+            margin-right: 10%;
+            width: 300px;
+            height: 50px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        flex-direction: column;
+        & button {
+            width: 250px;
+            height: 50px;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #f2f2f2;
+            background: #ff352b;
+            margin-bottom: 4%;
+        }
+        & input {
+            width: 14px;
+            height: 14px;
+            margin-right: 5px;
+            appearance: none;
+            border-bottom: none;
+            position: absolute;
+            &:checked + .contact__check-box {
+                background: url(../img/check_box-black-24dp.svg) center / cover no-repeat;
+            }
+        }
+        & label {
+            white-space: nowrap;
+            font-size: 12px;
+            line-height: 15px;
+            text-align: center;
+            letter-spacing: 0.015em;
+            color: #333333;
+            padding-left: 15px;
+        }
+    }
+    &__check-box {
+        position: absolute;
+        height: 14px;
+        width: 14px;
+        background: url(../img/check_box_outline_blank-black-24dp.svg) center / cover no-repeat;
+        margin-left: -20px;
+        margin-top: 1px;
+    }
+}
+.map {
+}
+// !!!FOOTER!!!
+.footer {
+    &__row {
+    }
+
+    &__label {
+    }
+
+    &__logo {
+    }
+
+    &__text {
+    }
+
+    &__menu {
+    }
+
+    &__list {
+    }
+
+    &__link {
+    }
+
+    &__contact {
+    }
+
+    &__icons {
+    }
+
+    &__i-link {
+    }
+
+    &__email {
+    }
+
+    &__phones {
+    }
+
+    &__callback {
+    }
+
+    &__phone {
+    }
 }
