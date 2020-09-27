@@ -57,14 +57,10 @@ $(document).ready(function () {
         // Именно на нажамот загаловке .block__title добавляем переключатель-блок active
         // с помощью next мы добавляем анимацию слайда переключателся slideToggle со скоростью 300 мили секунд;
         $(this).prev().toggleClass('active');
-        if ($(this).html() != 'Свернуть') {
-            $('.reviews__spoiler').click((e) => {
-                $(this).html('Свернуть')
-            })
-        } else {
-            $('.reviews__spoiler').click((e) => {
-                $(this).html('Свернуть')
-            })
+        if ($(this).text() === 'Читать полностью') {
+            $(this).text('Свернуть')
+        } else if ($(this).text() === 'Свернуть') {
+            $(this).text('Читать полностью')
         }
         // Если блок .block имеет блок-класс one тогда происходит функция ↓↓
         // Может открыться только 1 спойлер
@@ -78,9 +74,9 @@ $(document).ready(function () {
 // Slider
 
 // Burger
-// $(document).ready(function () {
-//     $('.header__burger').click(function (event) {
-//         $('.header__burger,.header__menu').toggleClass('active');
-//         $('body').toggleClass('lock');
-//     });
-// });
+$(document).ready(function () {
+    $('.header__burger').click(function (event) {
+        $('.header__burger,.header__menu').toggleClass('active');
+        $('body').toggleClass('lock');
+    });
+});
