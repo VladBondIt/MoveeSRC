@@ -29,48 +29,57 @@ link.forEach(item => {
     })
 });
 // Hovers
-const triggLeft = document.querySelector('.stats__left')
-const changeFill = document.querySelector('.stats__svg_l')
+// const triggLeft = document.querySelector('.stats__left')
+// const changeFill = document.querySelector('.stats__svg_l')
 
-triggLeft.onmouseenter = () => {
-    changeFill.style.fill = "white";
-};
-triggLeft.onmouseleave = () => {
-    changeFill.style.fill = "#5e80ff";
-};
+// triggLeft.onmouseenter = () => {
+//     changeFill.style.fill = "white";
+// };
+// triggLeft.onmouseleave = () => {
+//     changeFill.style.fill = "#5e80ff";
+// };
 
-const triggRight = document.querySelector('.stats__right')
-const changeStroke = document.querySelector('.stats__svg_r')
+// const triggRight = document.querySelector('.stats__right')
+// const changeStroke = document.querySelector('.stats__svg_r')
 
-triggRight.onmouseenter = () => {
-    changeStroke.style.stroke = "white";
-};
-triggRight.onmouseleave = () => {
-    changeStroke.style.stroke = "#5e80ff";
-};
+// triggRight.onmouseenter = () => {
+//     changeStroke.style.stroke = "white";
+// };
+// triggRight.onmouseleave = () => {
+//     changeStroke.style.stroke = "#5e80ff";
+// };
 // Spoilers
 $(document).ready(function () {
     // При КЛИКЕ на блок .block__title происходит функция ↓↓
-    $('.help__title').click(function (event) {
+    $('.reviews__spoiler').click(function (event) {
         // Описание функции
         // Именно на нажамот загаловке .block__title добавляем переключатель-блок active
         // с помощью next мы добавляем анимацию слайда переключателся slideToggle со скоростью 300 мили секунд;
-        $(this).toggleClass('active').next().toggleClass('active');
+        $(this).prev().toggleClass('active');
+        if ($(this).html() === 'Читать полностью') {
+            $('.reviews__spoiler').click((e) => {
+                $(this).html('Свернуть')
+            })
+        } else {
+            $('.reviews__spoiler').click((e) => {
+                $(this).html('Читать полностью')
+            })
+        }
         // Если блок .block имеет блок-класс one тогда происходит функция ↓↓
         // Может открыться только 1 спойлер
-        if ($('.help__spoilers').hasClass('one')) {
-            // У все блоков .block__title кроме нажатого not(this) убираем класс active;
-            $('.help__title').not($(this)).removeClass('active').next().removeClass('active');
-        }
+        // if ($('.help__spoilers').hasClass('one')) {
+        //     // У все блоков .block__title кроме нажатого not(this) убираем класс active;
+        //     $('.help__title').not($(this)).removeClass('active').next().removeClass('active');
+        // }
     });
 });
 
 // Slider
 
 // Burger
-$(document).ready(function () {
-    $('.header__burger').click(function (event) {
-        $('.header__burger,.header__menu').toggleClass('active');
-        $('body').toggleClass('lock');
-    });
-});
+// $(document).ready(function () {
+//     $('.header__burger').click(function (event) {
+//         $('.header__burger,.header__menu').toggleClass('active');
+//         $('body').toggleClass('lock');
+//     });
+// });
