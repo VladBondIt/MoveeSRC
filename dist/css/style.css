@@ -318,6 +318,9 @@ body {
   position: absolute;
   top: 35%;
   right: 2%;
+  -webkit-transform: translateX(-20%);
+      -ms-transform: translateX(-20%);
+          transform: translateX(-20%);
 }
 
 .header__cb-shadow {
@@ -338,7 +341,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   background: rgba(61, 155, 233, 0.3);
-  z-index: 10;
+  z-index: 2000;
 }
 
 .header__callback {
@@ -589,7 +592,8 @@ body {
   text-decoration: underline;
 }
 
-.carpark__tabs-item:active {
+.carpark__tabs-item.is-active {
+  cursor: default;
   border: 1px solid #fed100;
 }
 
@@ -598,12 +602,90 @@ body {
 }
 
 .carpark__slider {
+  display: none;
+  position: relative;
+}
+
+.carpark__slider.is-active {
+  display: block;
+}
+
+.carpark__slider .slick-list {
+  overflow: hidden;
+}
+
+.carpark__slider .slick-track {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.carpark__slider .slick-center {
+  opacity: 1;
+}
+
+.carpark__slider .slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  font-size: 0;
+}
+
+.carpark__slider .slick-arrow.slick-prev {
+  background-image: url(../img/prev_slid.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.5;
+  left: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.carpark__slider .slick-arrow.slick-next {
+  background-image: url(../img/next_slid.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: contain;
+  background-position: center;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  opacity: 0.5;
+}
+
+.carpark__slider .slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carpark__slider .slick-dots li {
+  margin-right: 10%;
+}
+
+.carpark__slider .slick-dots li button {
+  background: url(../img/dots.svg) center/contain no-repeat;
+  width: 13px;
+  height: 13px;
+  font-size: 0;
+}
+
+.carpark__slider .slick-dots li:last-child {
+  margin: 0;
+}
+
+.carpark__slider .slick-dots .slick-active button {
+  background: url(../img/dots.svg) center/13px 13px no-repeat, url(../img/dots_act.svg) center/contain no-repeat;
+  width: 22px;
+  height: 22px;
 }
 
 .carpark__item {
@@ -616,12 +698,18 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .carpark__label {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 25%;
-          flex: 0 1 25%;
+      -ms-flex: 0 1 20%;
+          flex: 0 1 20%;
+  margin-left: 1%;
+  padding: 0 5%;
 }
 
 .carpark__sublabel {
@@ -678,16 +766,48 @@ body {
 
 .carpark__img {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 75%;
-          flex: 0 1 75%;
+      -ms-flex: 0 1 80%;
+          flex: 0 1 80%;
 }
 
 .carpark__img img,
 .carpark__img source {
-  width: 100%;
-  height: 100%;
+  width: 75%;
+  height: 75%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transform: translateX(18%);
+      -ms-transform: translateX(18%);
+          transform: translateX(18%);
+}
+
+.carpark__adap-desr {
+  display: none;
+}
+
+.carpark__adap-desr span {
+  margin: 0 15px;
+}
+
+.carpark__btn-adapt {
+  width: 300px;
+  height: 50px;
+  background: #fed100;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 3% auto 0;
+}
+
+.carpark__btn-adapt a {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
 }
 
 .reviews {
@@ -1196,6 +1316,17 @@ body {
             transform: translateX(20%);
   }
 
+  .carpark__img img,
+  .carpark__img source {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+  }
+
   .contact__body {
     text-align: center;
   }
@@ -1417,6 +1548,48 @@ body {
   }
 }
 
+@media (max-width: 600px) {
+  .carpark__slider .slick-arrow.slick-prev {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .carpark__slider .slick-arrow.slick-next {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .carpark__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .carpark__label {
+    display: none;
+  }
+
+  .carpark__img {
+    margin-bottom: 2%;
+  }
+
+  .carpark__adap-desr {
+    margin-bottom: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .carpark__btn-adapt {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 @media (max-width: 525px) {
   .reviews__column:nth-child(3) {
     display: none;
@@ -1459,6 +1632,10 @@ body {
   }
 }
 @supports (-webkit-appearance:none){
+.carpark__slider .slick-arrow.slick-prev{background-image:url(../img/prev_slid.svg)}
+.carpark__slider .slick-arrow.slick-next{background-image:url(../img/next_slid.svg)}
+.carpark__slider .slick-dots li button{background:url(../img/dots.svg) center/contain no-repeat}
+.carpark__slider .slick-dots .slick-active button{background:url(../img/dots.svg) center/13px 13px no-repeat, url(../img/dots_act.svg) center/contain no-repeat}
 .carpark__list li::before{background:url(../img/carpark_check.webp) center/cover no-repeat}
 .contact__btn input:checked + .contact__check-box{background:url(../img/check_box-black-24dp.svg) center/cover no-repeat}
 .contact__check-box{background:url(../img/check_box_outline_blank-black-24dp.svg) center/cover no-repeat}
@@ -1506,6 +1683,14 @@ body {
 }
 
  @media (max-width: 767px) and (max-width: 510px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 600px){
 
 @supports (-webkit-appearance:none){
 

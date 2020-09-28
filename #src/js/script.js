@@ -1,6 +1,5 @@
 // Это не ошибка все ОК
 @@include('map.js')
-@@include('slick.min.js')
 
 // Функция проверки возможности отображения WEBP
 function testWebP(callback) {
@@ -21,13 +20,13 @@ testWebP(function (support) {
     }
 });
 // Links
-const link = document.querySelectorAll('a')
+// const link = document.querySelectorAll('a')
 
-link.forEach(item => {
-    item.addEventListener('click', (e) => {
-        e.preventDefault();
-    })
-});
+// link.forEach(item => {
+//     item.addEventListener('click', (e) => {
+//         e.preventDefault();
+//     })
+// });
 // Hovers
 // const triggLeft = document.querySelector('.stats__left')
 // const changeFill = document.querySelector('.stats__svg_l')
@@ -70,7 +69,7 @@ $(document).ready(function () {
     });
 });
 
-// Slider
+
 
 // Burger
 $(document).ready(function () {
@@ -78,4 +77,44 @@ $(document).ready(function () {
         $('.header__burger,.header__menu').toggleClass('active');
         $('body').toggleClass('lock');
     });
+});
+
+// !!!TABS!!!
+
+let tabs = document.querySelector('.carpark__tabs');
+let btns = tabs.querySelectorAll('.carpark__tabs-item');
+let items = tabs.querySelectorAll('.carpark__slider');
+
+function change(arr, i) {
+    arr.forEach(item => {
+        item.forEach(i => { i.classList.remove('is-active') });
+        item[i].classList.add('is-active');
+    })
+};
+
+for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('click', () => {
+        change([btns, items], i);
+    });
+};
+
+// Slider
+$(document).ready(function () {
+    $('.carpark__slider').slick({
+        speed: 800,
+        touchThreshold: 20,
+        centerMode: true,
+        slideToShow: 1,
+        autoplay: true,
+        autoplaySpeed: 1000,
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                    dots: true,
+                }
+            },
+        ]
+    });
+    $('.carpark__slider').slick('setPosition');
 });

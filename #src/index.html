@@ -132,11 +132,11 @@
                     </div>
                     <div class="carpark__tabs">
                         <nav class="carpark__tabs-items">
-                            <a href="#gaz" class="carpark__tabs-item">Газели</a>
-                            <a href="#mini" class="carpark__tabs-item">Каблуки</a>
-                            <a href="#truck" class="carpark__tabs-item">Грузовики</a>
+                            <button class="carpark__tabs-item is-active">Газели</button>
+                            <button class="carpark__tabs-item">Каблуки</button>
+                            <button class="carpark__tabs-item">Грузовики</button>
                         </nav>
-                        <div id="gaz" class="carpark__slider carpark__slider_gaz">
+                        <div class="carpark__slider carpark__slider_gaz is-active">
                             <div class="carpark__item">
                                 <div class="carpark__label">
                                     <div class="carpark__sublabel">Газель 3 метра
@@ -154,6 +154,9 @@
                                 <div class="carpark__img">
                                     <img src="img/car_park_img.png" alt="">
                                 </div>
+                                <div class="carpark__adap-desr">
+                                    Газель 3 метра <span>/</span> 1,5 тонны
+                                </div>
                             </div>
                             <div class="carpark__item">
                                 <div class="carpark__label">
@@ -172,9 +175,12 @@
                                 <div class="carpark__img">
                                     <img src="img/car_park_img.png" alt="">
                                 </div>
+                                <div class="carpark__adap-desr">
+                                    Газель 3 метра <span>/</span> 1,5 тонны
+                                </div>
                             </div>
                         </div>
-                        <div id="mini" class="carpark__slider carpark__slider_mini">
+                        <div class="carpark__slider carpark__slider_mini">
                             <div class="carpark__item">
                                 <div class="carpark__label">
                                     <div class="carpark__sublabel">Каблук 2 метра
@@ -190,7 +196,10 @@
                                     </div>
                                 </div>
                                 <div class="carpark__img">
-                                    <img src="img/car_park_img.png" alt="">
+                                    <img src="img/mini_carpark.png" alt="">
+                                </div>
+                                <div class="carpark__adap-desr">
+                                    Каблук 2 метра <span>/</span> 1 тонна
                                 </div>
                             </div>
                             <div class="carpark__item">
@@ -208,11 +217,14 @@
                                     </div>
                                 </div>
                                 <div class="carpark__img">
-                                    <img src="img/car_park_img.png" alt="">
+                                    <img src="img/mini_carpark.png" alt="">
+                                </div>
+                                <div class="carpark__adap-desr">
+                                    Каблук 2 метра <span>/</span> 1 тонна
                                 </div>
                             </div>
                         </div>
-                        <div id="truck" class="carpark__slider carpark__slider_truck">
+                        <div class="carpark__slider carpark__slider_truck">
                             <div class="carpark__item">
                                 <div class="carpark__label">
                                     <div class="carpark__sublabel">Грузовик 5 метров
@@ -228,7 +240,10 @@
                                     </div>
                                 </div>
                                 <div class="carpark__img">
-                                    <img src="img/car_park_img.png" alt="">
+                                    <img src="img/truck_carpark.png" alt="">
+                                </div>
+                                <div class="carpark__adap-desr">
+                                    Грузовик 5 метра <span>/</span> 5 тонна
                                 </div>
                             </div>
                             <div class="carpark__item">
@@ -246,11 +261,16 @@
                                     </div>
                                 </div>
                                 <div class="carpark__img">
-                                    <img src="img/car_park_img.png" alt="">
+                                    <img src="img/truck_carpark.png" alt="">
+                                </div>
+                                <div class="carpark__adap-desr">
+                                    Грузовик 5 метра <span>/</span> 5 тонна
                                 </div>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="carpark__btn-adapt">
+                        <a href="">Заказать</a>
                     </div>
                 </div>
             </section>
@@ -341,11 +361,11 @@
                             </div>
                         </div>
                         <from class="contact__form">
-                            <input type="text" name="yourname" placeholder="Ваше имя" id="">
-                            <input type="tel" name="phone" placeholder="Телефон" id="">
+                            <input type="text" name="yourname" placeholder="Ваше имя">
+                            <input type="tel" name="phone" placeholder="Телефон">
                             <div class="contact__btn">
                                 <button type="submit">Перезвонить мне</button>
-                                <label><input type="checkbox" name="license" id="">
+                                <label><input type="checkbox" name="license">
                                     <span class="contact__check-box"></span>
                                     Даю согласие на
                                     обработку
@@ -470,6 +490,7 @@
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
     <script src="js/script.min.js"></script>
 </body>
 

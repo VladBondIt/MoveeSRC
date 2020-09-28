@@ -284,6 +284,7 @@ body {
         position: absolute;
         top: 35%;
         right: 2%;
+        transform: translateX(-20%);
         @media (max-width: 1439px) {
             display: none;
         }
@@ -301,7 +302,7 @@ body {
         align-items: center;
         justify-content: center;
         background: rgba(61, 155, 233, 0.3);
-        z-index: 10;
+        z-index: 2000;
         @media (max-width: 767px) {
             width: 80px;
             height: 80px;
@@ -524,7 +525,8 @@ body {
         &:hover {
             text-decoration: underline;
         }
-        &:active {
+        &.is-active {
+            cursor: default;
             border: 1px solid #fed100;
         }
         &:last-child {
@@ -533,13 +535,90 @@ body {
     }
 
     &__slider {
-        display: flex;
-        justify-content: center;
+        display: none;
+        position: relative;
+        &.is-active {
+            display: block;
+        }
         &_gaz {
         }
         &_mini {
         }
         &_truck {
+        }
+        & .slick-list {
+            overflow: hidden;
+        }
+        & .slick-track {
+            display: flex;
+            justify-content: center;
+        }
+        & .slick-center {
+            opacity: 1;
+        }
+        & .slick-arrow {
+            position: absolute;
+            top: 50%;
+            z-index: 10;
+            font-size: 0;
+        }
+        & .slick-arrow.slick-prev {
+            background-image: url(../img/prev_slid.svg);
+            background-repeat: no-repeat;
+            background-color: transparent;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.5;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            @media (max-width: 600px) {
+                display: none;
+                width: 0;
+                height: 0;
+            }
+        }
+        & .slick-arrow.slick-next {
+            background-image: url(../img/next_slid.svg);
+            background-repeat: no-repeat;
+            background-color: transparent;
+            background-size: contain;
+            background-position: center;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            opacity: 0.5;
+            @media (max-width: 600px) {
+                display: none;
+                width: 0;
+                height: 0;
+            }
+        }
+        & .slick-dots {
+            display: flex;
+            justify-content: center;
+
+            & li {
+                margin-right: 10%;
+                & button {
+                    background: url(../img/dots.svg) center / contain no-repeat;
+                    width: 13px;
+                    height: 13px;
+                    font-size: 0;
+                }
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+            & .slick-active {
+                & button {
+                    background: url(../img/dots.svg) center / 13px 13px no-repeat,
+                        url(../img/dots_act.svg) center / contain no-repeat;
+                    width: 22px;
+                    height: 22px;
+                }
+            }
         }
     }
 
@@ -547,10 +626,20 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        opacity: 0;
+        transition: all 0.5s;
+        @media (max-width: 600px) {
+            flex-direction: column;
+        }
     }
 
     &__label {
-        flex: 0 1 25%;
+        flex: 0 1 20%;
+        margin-left: 1%;
+        padding: 0 5%;
+        @media (max-width: 600px) {
+            display: none;
+        }
     }
 
     &__sublabel {
@@ -597,12 +686,51 @@ body {
     }
 
     &__img {
-        flex: 0 1 75%;
+        flex: 0 1 80%;
         & img,
         source {
-            width: 100%;
-            height: 100%;
+            width: 75%;
+            height: 75%;
             object-fit: cover;
+            transform: translateX(18%);
+            @media (max-width: 1023px) {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transform: translateX(0);
+            }
+        }
+        @media (max-width: 600px) {
+            margin-bottom: 2%;
+        }
+    }
+    &__adap-desr {
+        display: none;
+
+        & span {
+            margin: 0 15px;
+        }
+        @media (max-width: 600px) {
+            margin-bottom: 5%;
+            display: flex;
+        }
+    }
+    &__btn-adapt {
+        width: 300px;
+        height: 50px;
+        background: #fed100;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        margin: 3% auto 0;
+        & a {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #333333;
+        }
+        @media (max-width: 600px) {
+            display: flex;
         }
     }
 }
