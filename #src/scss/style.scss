@@ -343,14 +343,6 @@ body {
                 height: 30px;
             }
         }
-        @media (max-width: 767px) {
-            width: 60px;
-            height: 60px;
-            & svg {
-                width: 30px;
-                height: 30px;
-            }
-        }
     }
     &__cb-shadow {
         background: rgba(61, 155, 233, 0.3);
@@ -361,6 +353,10 @@ body {
         z-index: -1;
         opacity: 0;
         animation: cb-shadow 3s alternate infinite linear;
+        @media (max-width: 767px) {
+            width: 60px;
+            height: 60px;
+        }
     }
 }
 .container {

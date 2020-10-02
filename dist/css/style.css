@@ -1576,14 +1576,9 @@ body {
     height: 30px;
   }
 
-  .header__callback {
+  .header__cb-shadow {
     width: 60px;
     height: 60px;
-  }
-
-  .header__callback svg {
-    width: 30px;
-    height: 30px;
   }
 
   .price__row {
