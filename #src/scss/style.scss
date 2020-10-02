@@ -216,7 +216,7 @@ body {
             color: #f2f2f2;
         }
         &:active {
-            transform: translate(10px, 10px);
+            transform: translate(2px, 2px);
         }
         margin-bottom: 6%;
         @media (max-width: 1023px) {
@@ -296,13 +296,29 @@ body {
         right: 8%;
         bottom: 5%;
         border-radius: 50%;
-        width: 118px;
-        height: 118px;
+        width: 108px;
+        height: 108px;
         display: flex;
         align-items: center;
         justify-content: center;
         background: rgba(61, 155, 233, 0.3);
         z-index: 2000;
+        &:hover::before,
+        &:hover::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(61, 155, 233, 1);
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            top: -20px;
+            border-radius: 50%;
+            animation: pulse 1.8s linear infinite;
+            opacity: 0;
+        }
+        &:hover::after {
+            animation-delay: 0.5s;
+        }
         @media (max-width: 767px) {
             width: 80px;
             height: 80px;
@@ -319,6 +335,7 @@ body {
         width: 90px;
         height: 90px;
         background: rgba(61, 155, 233, 0.8);
+        animation: phone 0.7s ease-in-out infinite;
         @media (max-width: 767px) {
             width: 60px;
             height: 60px;
@@ -535,10 +552,12 @@ body {
     }
 
     &__slider {
-        display: none;
+        visibility: hidden;
+        height: 0;
         position: relative;
         &.is-active {
-            display: block;
+            visibility: visible;
+            height: 100%;
         }
         &_gaz {
         }
@@ -627,7 +646,6 @@ body {
         justify-content: center;
         align-items: center;
         opacity: 0;
-        transition: all 0.5s;
         @media (max-width: 600px) {
             flex-direction: column;
         }
@@ -1177,5 +1195,31 @@ body {
         line-height: 24px;
         color: #333333;
         text-decoration: underline;
+    }
+}
+
+@keyframes phone {
+    0% {
+        transform: rotateY(25deg);
+    }
+    50% {
+        transform: rotateY(-25deg);
+    }
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
     }
 }

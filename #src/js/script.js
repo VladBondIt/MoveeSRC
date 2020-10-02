@@ -105,8 +105,8 @@ $(document).ready(function () {
         touchThreshold: 20,
         centerMode: true,
         slideToShow: 1,
-        autoplay: true,
-        autoplaySpeed: 1000,
+        // autoplay: true,
+        // autoplaySpeed: 2000,
         responsive: [
             {
                 breakpoint: 600,

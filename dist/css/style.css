@@ -267,9 +267,9 @@ body {
 }
 
 .header__btn:active {
-  -webkit-transform: translate(10px, 10px);
-      -ms-transform: translate(10px, 10px);
-          transform: translate(10px, 10px);
+  -webkit-transform: translate(2px, 2px);
+      -ms-transform: translate(2px, 2px);
+          transform: translate(2px, 2px);
 }
 
 .header__descr-list {
@@ -329,8 +329,8 @@ body {
   right: 8%;
   bottom: 5%;
   border-radius: 50%;
-  width: 118px;
-  height: 118px;
+  width: 108px;
+  height: 108px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -342,6 +342,26 @@ body {
           justify-content: center;
   background: rgba(61, 155, 233, 0.3);
   z-index: 2000;
+}
+
+.header__cb-shadow:hover::before,
+.header__cb-shadow:hover::after {
+  content: "";
+  position: absolute;
+  border: 1px solid #3d9be9;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  top: -20px;
+  border-radius: 50%;
+  -webkit-animation: pulse 1.8s linear infinite;
+          animation: pulse 1.8s linear infinite;
+  opacity: 0;
+}
+
+.header__cb-shadow:hover::after {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 
 .header__callback {
@@ -358,6 +378,8 @@ body {
   width: 90px;
   height: 90px;
   background: rgba(61, 155, 233, 0.8);
+  -webkit-animation: phone 0.7s ease-in-out infinite;
+          animation: phone 0.7s ease-in-out infinite;
 }
 
 .container {
@@ -602,12 +624,14 @@ body {
 }
 
 .carpark__slider {
-  display: none;
+  visibility: hidden;
+  height: 0;
   position: relative;
 }
 
 .carpark__slider.is-active {
-  display: block;
+  visibility: visible;
+  height: 100%;
 }
 
 .carpark__slider .slick-list {
@@ -699,9 +723,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   opacity: 0;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .carpark__label {
@@ -1253,6 +1274,76 @@ body {
   line-height: 24px;
   color: #333333;
   text-decoration: underline;
+}
+
+@-webkit-keyframes phone {
+  0% {
+    -webkit-transform: rotateY(25deg);
+            transform: rotateY(25deg);
+  }
+
+  50% {
+    -webkit-transform: rotateY(-25deg);
+            transform: rotateY(-25deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+@keyframes phone {
+  0% {
+    -webkit-transform: rotateY(25deg);
+            transform: rotateY(25deg);
+  }
+
+  50% {
+    -webkit-transform: rotateY(-25deg);
+            transform: rotateY(-25deg);
+  }
+
+  100% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0;
+  }
 }
 
 @media (max-width: 1439px) {
