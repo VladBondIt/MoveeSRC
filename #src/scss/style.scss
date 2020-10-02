@@ -290,7 +290,7 @@ body {
         }
     }
 
-    &__cb-shadow {
+    &__cb-wrapper {
         cursor: pointer;
         position: fixed;
         right: 8%;
@@ -301,7 +301,6 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        background: rgba(61, 155, 233, 0.3);
         z-index: 2000;
         &:hover::before,
         &:hover::after {
@@ -335,7 +334,7 @@ body {
         width: 90px;
         height: 90px;
         background: rgba(61, 155, 233, 0.8);
-        animation: phone 0.7s ease-in-out infinite;
+        animation: phone 0.7s alternate ease-in-out infinite;
         @media (max-width: 767px) {
             width: 60px;
             height: 60px;
@@ -352,6 +351,16 @@ body {
                 height: 30px;
             }
         }
+    }
+    &__cb-shadow {
+        background: rgba(61, 155, 233, 0.3);
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        animation: cb-shadow 3s alternate infinite linear;
     }
 }
 .container {
@@ -1221,5 +1230,19 @@ body {
     100% {
         transform: scale(1.2);
         opacity: 0;
+    }
+}
+@keyframes cb-shadow {
+    0% {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+    100% {
+        opacity: 0.2;
+        transform: scale(1);
     }
 }
