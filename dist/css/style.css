@@ -244,6 +244,14 @@ body {
 }
 
 .header__btn {
+  margin-bottom: 6%;
+}
+
+.header__btn a {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #f2f2f2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -256,14 +264,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 6%;
-}
-
-.header__btn a {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 29px;
-  color: #f2f2f2;
 }
 
 .header__btn:active {
@@ -542,6 +542,14 @@ body {
 }
 
 .price__btn {
+  margin-bottom: 10%;
+}
+
+.price__btn a {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
   width: 250px;
   height: 51.34px;
   display: -webkit-box;
@@ -554,14 +562,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   background: #fed100;
-  margin-bottom: 10%;
-}
-
-.price__btn a {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  color: #333333;
 }
 
 .title {
@@ -774,7 +774,11 @@ body {
   top: 3px;
 }
 
-.carpark__btn {
+.carpark__btn a {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
   width: 250px;
   height: 50px;
   background: #fed100;
@@ -787,13 +791,6 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.carpark__btn a {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  color: #333333;
 }
 
 .carpark__img {
@@ -1529,7 +1526,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: white;
     padding-top: 70px;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;

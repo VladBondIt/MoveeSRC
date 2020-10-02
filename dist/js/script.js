@@ -79,6 +79,13 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $('.header__link').click(function (event) {
+        $('.header__burger,.header__menu').toggleClass('active');
+        $('body').toggleClass('lock');
+    });
+});
+
 // !!!TABS!!!
 
 let tabs = document.querySelector('.carpark__tabs');
