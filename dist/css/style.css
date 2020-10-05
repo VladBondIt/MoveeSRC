@@ -1284,7 +1284,7 @@ body {
   text-decoration: underline;
 }
 
-.popup-login {
+.popup {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -1296,12 +1296,12 @@ body {
   z-index: 1000;
 }
 
-.popup-login.open {
+.popup.open {
   opacity: 1;
   visibility: visible;
 }
 
-.popup-login__body {
+.popup__body {
   min-height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1316,12 +1316,11 @@ body {
   z-index: 1000;
 }
 
-.popup-login__content {
+.popup__content {
   position: relative;
   max-width: 800px;
   background-color: #fff;
   padding: 30px;
-  border-radius: 15px;
   opacity: 0;
   -webkit-transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
           transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
@@ -1330,13 +1329,13 @@ body {
   transition: all 0.9s;
 }
 
-.popup-login__content.open {
+.popup__content.open {
   opacity: 1;
   -webkit-transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
           transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
 }
 
-.popup-login__close {
+.popup__close {
   display: block;
   position: absolute;
   background-image: url(../img/close-24px.svg);
@@ -1349,7 +1348,7 @@ body {
   cursor: pointer;
 }
 
-.popup-login__form {
+.popup__form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1360,58 +1359,77 @@ body {
   min-height: 250px;
 }
 
-.popup-login__form input {
+.popup__form input {
   width: 280px;
   height: 50px;
-  border: 1px solid #061e37;
-  border-radius: 5px;
+  border-bottom: 1px solid #061e37;
   margin-top: 10px;
-}
-
-.popup-login__login {
-  font-size: 16px;
-  font-weight: 700;
-  color: #061e37;
-  padding-left: 10px;
-}
-
-.popup-login__pass {
-  font-size: 16px;
-  font-weight: 700;
-  color: #061e37;
-  padding-left: 10px;
-}
-
-.popup-login__btn {
-  width: 280px;
-  margin-top: 30px;
-  height: 40px;
-  border-radius: 7px;
-  font-size: 16px;
-  line-height: 30px;
   font-weight: 500;
-  text-transform: uppercase;
-  color: #ffffff;
-  background-color: #1de9b6;
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(51, 51, 51, 0.7);
 }
 
-.popup-login__btn:active {
-  -webkit-transform: translate(2px, 2px);
-      -ms-transform: translate(2px, 2px);
-          transform: translate(2px, 2px);
-}
-
-.popup-login__links {
+.popup__btns {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 16px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.popup-login__reg {
-  margin-left: 20px;
+.popup__btns input {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-bottom: none;
+  position: absolute;
+}
+
+.popup__btns input:checked + .popup__check-box {
+  background: url(../img/check_box-black-24dp.svg) center/cover no-repeat;
+}
+
+.popup__btns label {
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 0.015em;
+  color: #333333;
+  padding-left: 15px;
+}
+
+.popup__btns button {
+  width: 250px;
+  height: 50px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #f2f2f2;
+  background: #ff352b;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.popup__btns button:active {
+  -webkit-transform: translate(1px, 2px);
+      -ms-transform: translate(1px, 2px);
+          transform: translate(1px, 2px);
+}
+
+.popup__check-box {
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  background: url(../img/check_box_outline_blank-black-24dp.svg) center/cover no-repeat;
+  margin-left: -20px;
+  margin-top: 0.5px;
 }
 
 @-webkit-keyframes phone {
@@ -1897,7 +1915,7 @@ body {
 }
 
 @media (max-width: 321px) {
-  .popup-login__content {
+  .popup__content {
     padding: 30px 10px;
   }
 }
@@ -1910,7 +1928,9 @@ body {
 .contact__btn input:checked + .contact__check-box{background:url(../img/check_box-black-24dp.svg) center/cover no-repeat}
 .contact__check-box{background:url(../img/check_box_outline_blank-black-24dp.svg) center/cover no-repeat}
 .map__list li::before{background:url(../img/map_card_chk.svg)}
-.popup-login__close{background-image:url(../img/close-24px.svg)}
+.popup__close{background-image:url(../img/close-24px.svg)}
+.popup__btns input:checked + .popup__check-box{background:url(../img/check_box-black-24dp.svg) center/cover no-repeat}
+.popup__check-box{background:url(../img/check_box_outline_blank-black-24dp.svg) center/cover no-repeat}
 }
 
  @media (max-width: 1439px){

@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </section>
-            <section id="price" class="price">
+            <section id="prices" class="price">
                 <div class="container">
                     <div class="price__title title">
                         <h2 class="title__header">
@@ -148,7 +148,7 @@
                                         <li>Грузоподъемность 1,5 т</li>
                                     </ul>
                                     <div class="carpark__btn">
-                                        <a href="">Заказать</a>
+                                        <a id="pop-trigg" href="">Заказать</a>
                                     </div>
                                 </div>
                                 <div class="carpark__img">
@@ -169,7 +169,7 @@
                                         <li>Грузоподъемность 1,5 т</li>
                                     </ul>
                                     <div class="carpark__btn">
-                                        <a href="">Заказать</a>
+                                        <a id="pop-trigg" href="">Заказать</a>
                                     </div>
                                 </div>
                                 <div class="carpark__img">
@@ -192,7 +192,7 @@
                                         <li>Грузоподъемность 1,5 т</li>
                                     </ul>
                                     <div class="carpark__btn">
-                                        <a href="">Заказать</a>
+                                        <a id="pop-trigg" href="">Заказать</a>
                                     </div>
                                 </div>
                                 <div class="carpark__img">
@@ -213,7 +213,7 @@
                                         <li>Грузоподъемность 1,5 т</li>
                                     </ul>
                                     <div class="carpark__btn">
-                                        <a href="">Заказать</a>
+                                        <a id="pop-trigg" href="">Заказать</a>
                                     </div>
                                 </div>
                                 <div class="carpark__img">
@@ -236,7 +236,7 @@
                                         <li>Грузоподъемность 1,5 т</li>
                                     </ul>
                                     <div class="carpark__btn">
-                                        <a href="">Заказать</a>
+                                        <a id="pop-trigg" href="">Заказать</a>
                                     </div>
                                 </div>
                                 <div class="carpark__img">
@@ -257,7 +257,7 @@
                                         <li>Грузоподъемность 1,5 т</li>
                                     </ul>
                                     <div class="carpark__btn">
-                                        <a href="">Заказать</a>
+                                        <a id="pop-trigg" href="">Заказать</a>
                                     </div>
                                 </div>
                                 <div class="carpark__img">
@@ -270,7 +270,7 @@
                         </div>
                     </div>
                     <div class="carpark__btn-adapt">
-                        <a href="">Заказать</a>
+                        <a id="pop-trigg" href="">Заказать</a>
                     </div>
                 </div>
             </section>
@@ -439,7 +439,7 @@
                     <div class="footer__menu">
                         <ul class="footer__list">
                             <li><a href="#main" class="footer__link">Главная</a></li>
-                            <li><a href="#price" class="footer__link">Цена</a></li>
+                            <li><a href="#prices" class="footer__link">Цена</a></li>
                             <li><a href="#carpark" class="footer__link">Автопарк</a></li>
                             <li><a href="#reviews" class="footer__link">Отзывы</a></li>
                             <li><a href="#contact" class="footer__link">Контакты</a></li>
@@ -488,19 +488,22 @@
                 </div>
             </div>
         </footer>
-        <div class="popup-login">
-            <div class="popup-login__body">
-                <div class="popup-login__content">
-                    <span class="popup-login__close close-popup"></span>
-                    <form class="popup-login__form" action="" method="get">
-                        <input class="popup-login__login" type="text" placeholder="Login">
-                        <input class="popup-login__pass" type="password" placeholder="Password">
-                        <button class="popup-login__btn close-popup" type="submit">Log in</button>
+        <div class="popup">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <span class="popup__close close-popup"></span>
+                    <form class="popup__form" action="" method="get">
+                        <input type="text" placeholder="Ваше имя">
+                        <input type="tel" placeholder="Телефон">
+                        <div class="popup__btns">
+                            <button class="popup__btn close-popup" type="submit">Перезвонить мне</button>
+                            <label><input type="checkbox" name="license">
+                                <span class="popup__check-box"></span>
+                                Даю согласие на
+                                обработку
+                                данных</label>
+                        </div>
                     </form>
-                    <div class="popup-login__links">
-                        <a class="popup-login__res-pass" href="">Forgot password?</a>
-                        <a class="popup-login__reg" href="">Create account</a>
-                    </div>
                 </div>
             </div>
         </div>

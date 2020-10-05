@@ -127,10 +127,10 @@ $(document).ready(function () {
 });
 
 
-const popUp = document.querySelector('.popup-login'),
-    popInner = document.querySelector('.popup-login__content'),
+const popUp = document.querySelector('.popup'),
+    popInner = document.querySelector('.popup__content'),
     popBtns = document.querySelectorAll('#pop-trigg'),
-    closeBtn = document.querySelector('.close-popup');
+    closeBtns = document.querySelectorAll('.close-popup');
 
 
 function openPopup() {
@@ -142,11 +142,12 @@ function closePopup() {
     popInner.classList.remove('open');
 }
 
-closeBtn.addEventListener('click', closePopup)
+closeBtns.forEach(closeBtnItem => {
+    closeBtnItem.addEventListener('click', closePopup);
+});
 
 for (let i = 0; i < popBtns.length; i++) {
-    const btn = popBtns[i];
-    btn.addEventListener('click', (e) => {
+    popBtns[i].addEventListener('click', (e) => {
         e.preventDefault();
         openPopup();
     })
