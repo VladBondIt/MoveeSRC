@@ -27,26 +27,7 @@ testWebP(function (support) {
 //         e.preventDefault();
 //     })
 // });
-// Hovers
-// const triggLeft = document.querySelector('.stats__left')
-// const changeFill = document.querySelector('.stats__svg_l')
 
-// triggLeft.onmouseenter = () => {
-//     changeFill.style.fill = "white";
-// };
-// triggLeft.onmouseleave = () => {
-//     changeFill.style.fill = "#5e80ff";
-// };
-
-// const triggRight = document.querySelector('.stats__right')
-// const changeStroke = document.querySelector('.stats__svg_r')
-
-// triggRight.onmouseenter = () => {
-//     changeStroke.style.stroke = "white";
-// };
-// triggRight.onmouseleave = () => {
-//     changeStroke.style.stroke = "#5e80ff";
-// };
 // Spoilers
 $(document).ready(function () {
     // При КЛИКЕ на блок .block__title происходит функция ↓↓
@@ -126,7 +107,7 @@ $(document).ready(function () {
     $('.carpark__slider').slick('setPosition');
 });
 
-
+// MODALS
 const popUp = document.querySelector('.popup'),
     popInner = document.querySelector('.popup__content'),
     popBtns = document.querySelectorAll('#pop-trigg'),
