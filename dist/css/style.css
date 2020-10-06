@@ -1320,7 +1320,7 @@ body {
   position: relative;
   max-width: 800px;
   background-color: #fff;
-  padding: 30px;
+  padding: 50px;
   opacity: 0;
   -webkit-transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
           transform: perspective(600px) translate(0px, -100%) rotateX(45deg);

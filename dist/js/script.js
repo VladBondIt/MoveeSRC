@@ -130,6 +130,7 @@ $(document).ready(function () {
 const popUp = document.querySelector('.popup'),
     popInner = document.querySelector('.popup__content'),
     popBtns = document.querySelectorAll('#pop-trigg'),
+    popBody = document.querySelector('.popup__body'),
     closeBtns = document.querySelectorAll('.close-popup');
 
 
@@ -144,6 +145,12 @@ function closePopup() {
 
 closeBtns.forEach(closeBtnItem => {
     closeBtnItem.addEventListener('click', closePopup);
+});
+
+popBody.addEventListener('click', (e) => {
+    if (e.target === popBody) {
+        closePopup();
+    }
 });
 
 for (let i = 0; i < popBtns.length; i++) {
