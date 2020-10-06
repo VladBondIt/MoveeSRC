@@ -28,14 +28,14 @@ testWebP(function (support) {
 //     })
 // });
 
-// Spoilers
+// !!!!!Spoilers!!!!!
 $(document).ready(function () {
     // При КЛИКЕ на блок .block__title происходит функция ↓↓
     $('.reviews__spoiler').click(function (event) {
         // Описание функции
         // Именно на нажамот загаловке .block__title добавляем переключатель-блок active
         // с помощью next мы добавляем анимацию слайда переключателся slideToggle со скоростью 300 мили секунд;
-        $(this).prev().toggleClass('active');
+        $(this).toggleClass('active').prev().toggleClass('active');
         if ($(this).text() === 'Читать полностью') {
             $(this).text('Свернуть')
         } else if ($(this).text() === 'Свернуть') {
@@ -86,7 +86,7 @@ for (let i = 0; i < btns.length; i++) {
     });
 };
 
-// Slider
+// !!!!Slider!!!!
 $(document).ready(function () {
     $('.carpark__slider').slick({
         speed: 800,
@@ -107,7 +107,7 @@ $(document).ready(function () {
     $('.carpark__slider').slick('setPosition');
 });
 
-// MODALS
+// !!!!MODALS!!!!
 const popUp = document.querySelector('.popup'),
     popInner = document.querySelector('.popup__content'),
     popBtns = document.querySelectorAll('#pop-trigg'),
@@ -125,12 +125,16 @@ function closePopup() {
 }
 
 closeBtns.forEach(closeBtnItem => {
-    closeBtnItem.addEventListener('click', closePopup);
+    closeBtnItem.addEventListener('click', () => {
+        closePopup();
+        document.body.classList.remove('lock');
+    });
 });
 
 popBody.addEventListener('click', (e) => {
     if (e.target === popBody) {
         closePopup();
+        document.body.classList.remove('lock');
     }
 });
 
@@ -138,5 +142,6 @@ for (let i = 0; i < popBtns.length; i++) {
     popBtns[i].addEventListener('click', (e) => {
         e.preventDefault();
         openPopup();
+        document.body.classList.add('lock');
     })
 }

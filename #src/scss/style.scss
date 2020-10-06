@@ -14,11 +14,9 @@
 
 body {
     font-family: Montserrat;
-    // overflow-x: hidden;
+    overflow-x: hidden;
     &.lock {
-        @media (max-width: 1023px) {
-            overflow: hidden;
-        }
+        overflow: hidden;
     }
 }
 
@@ -207,22 +205,21 @@ body {
             font-size: 24px;
             line-height: 29px;
             color: #f2f2f2;
-
             display: flex;
             width: 304px;
             height: 60px;
             background: #ff352b;
             align-items: center;
             justify-content: center;
-        }
-        &:active {
-            transform: translate(2px, 2px);
-        }
-        margin-bottom: 6%;
-        @media (max-width: 1023px) {
-            position: relative;
-            margin: 0 auto;
-            z-index: 4;
+            @media (max-width: 1023px) {
+                position: relative;
+                margin: 0 auto;
+                z-index: 4;
+            }
+            margin-bottom: 6%;
+            &:active {
+                transform: translate(2px, 2px);
+            }
         }
     }
 
@@ -307,13 +304,16 @@ body {
             content: "";
             position: absolute;
             border: 1px solid rgba(61, 155, 233, 1);
-            left: -20px;
-            right: -20px;
-            bottom: -20px;
-            top: -20px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            top: -15px;
             border-radius: 50%;
             animation: pulse 1.8s linear infinite;
             opacity: 0;
+            @media (max-width: 767px) {
+                display: none;
+            }
         }
         &:hover::after {
             animation-delay: 0.5s;
@@ -823,23 +823,32 @@ body {
         font-size: 16px;
         line-height: 21px;
         color: #333333;
-        margin-bottom: 5%;
         text-overflow: ellipsis;
         overflow: hidden;
         height: 124px;
-        transition: all 1s;
+        transition: all 0.7s;
         &.active {
             height: 100%;
         }
     }
 
     &__spoiler {
+        display: flex;
+        align-items: center;
         font-size: 16px;
         line-height: 21px;
         color: #333333;
+        margin-top: -4%;
         text-decoration: underline;
         margin-bottom: 10%;
+        height: 70px;
+        background-color: #fecf00b2;
         cursor: pointer;
+        &.active {
+            background-color: transparent;
+            height: 30px;
+            margin-top: 0;
+        }
     }
 
     &__btn {
@@ -1237,8 +1246,8 @@ body {
             opacity: 1;
             transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
         }
-        @media (max-width: 321px) {
-            padding: 30px 10px;
+        @media (max-width: 424px) {
+            padding: 25px 14px;
         }
     }
 
@@ -1275,7 +1284,7 @@ body {
         & input {
             width: 14px;
             height: 14px;
-            margin-right: 5px;
+            margin: 0;
             appearance: none;
             border-bottom: none;
             position: absolute;
@@ -1290,7 +1299,6 @@ body {
             text-align: center;
             letter-spacing: 0.015em;
             color: #333333;
-            padding-left: 15px;
         }
         & button {
             width: 250px;
@@ -1313,7 +1321,7 @@ body {
         height: 14px;
         width: 14px;
         background: url(../img/check_box_outline_blank-black-24dp.svg) center / cover no-repeat;
-        margin-left: -20px;
+        margin-left: -25px;
         margin-top: 0.5px;
     }
 }
@@ -1339,7 +1347,7 @@ body {
         opacity: 1;
     }
     100% {
-        transform: scale(1.2);
+        transform: scale(1.1);
         opacity: 0;
     }
 }
