@@ -63,7 +63,7 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('.header__link').click(function (event) {
         $('.header__burger,.header__menu').toggleClass('active');
-        $('body').toggleClass('lock');
+        $('body').removeClass('lock');
     });
 });
 
@@ -110,7 +110,7 @@ $(document).ready(function () {
 // !!!!MODALS!!!!
 const popUp = document.querySelector('.popup'),
     popInner = document.querySelector('.popup__content'),
-    popBtns = document.querySelectorAll('#pop-trigg'),
+    popBtns = document.querySelectorAll('.pop-trigg'),
     popBody = document.querySelector('.popup__body'),
     closeBtns = document.querySelectorAll('.close-popup');
 
@@ -125,7 +125,8 @@ function closePopup() {
 }
 
 closeBtns.forEach(closeBtnItem => {
-    closeBtnItem.addEventListener('click', () => {
+    closeBtnItem.addEventListener('click', (e) => {
+        e.preventDefault();
         closePopup();
         document.body.classList.remove('lock');
     });
